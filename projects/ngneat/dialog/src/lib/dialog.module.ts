@@ -12,13 +12,14 @@ import {
   ConfirmDialogComponent,
   ErrorDialogComponent
 } from './built-in-dialogs';
+import { DialogDirective } from './dialog.directive';
 
 const BuiltIns = [BaseDialogComponent, SuccessDialogComponent, ConfirmDialogComponent, ErrorDialogComponent];
 
 @NgModule({
-  declarations: [DialogComponent, DialogCloseDirective, DialogDraggableDirective, BuiltIns],
+  declarations: [DialogComponent, DialogCloseDirective, DialogDraggableDirective, BuiltIns, DialogDirective],
   imports: [CommonModule],
-  exports: [DialogComponent, DialogCloseDirective]
+  exports: [DialogComponent, DialogCloseDirective, DialogDirective]
 })
 export class DialogModule {
   static forRoot(config?: Partial<GlobalDialogConfig>): ModuleWithProviders<DialogModule> {
