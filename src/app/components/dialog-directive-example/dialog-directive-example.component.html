@@ -4,10 +4,23 @@
 
   <div *ngneatDialog="showDialog; afterClosed: onDialogClosed; backdropClicked: onBackdropClicked" class="dialog">
     <h2>Test dialog using a structural directive</h2>
-    <p>This dialog has been opened with this custom config</p>
 
     <button dialogClose>Click me to close the dialog 😉</button>
   </div>
 
   <button (click)="openDialog()">Open dialog</button>
+</div>
+
+<div class="block">
+  <h3>Open dialog with structural directive with config</h3>
+
+  <div *ngneatDialog="showDialogWithConfig; afterClosed: onDialogClosed; with: config" class="dialog">
+    <h2>Test dialog using a structural directive with config</h2>
+    <p>This dialog has been opened with this custom config</p>
+    <pre>{{ config | json }}</pre>
+
+    <button dialogClose>Click me to close the dialog 😉</button>
+  </div>
+
+  <button (click)="openDialogWithConfig()">Open dialog</button>
 </div>

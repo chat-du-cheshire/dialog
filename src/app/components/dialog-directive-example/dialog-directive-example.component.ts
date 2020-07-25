@@ -8,9 +8,10 @@ import { DialogConfig } from '@ngneat/dialog';
   encapsulation: ViewEncapsulation.None
 })
 export class DialogDirectiveExampleComponent implements OnInit {
-  @Input() config: DialogConfig;
+  @Input() config: Partial<DialogConfig>;
 
   showDialog = false;
+  showDialogWithConfig = false;
 
   constructor() {}
 
@@ -18,6 +19,7 @@ export class DialogDirectiveExampleComponent implements OnInit {
 
   onDialogClosed = () => {
     this.showDialog = false;
+    this.showDialogWithConfig = false;
   };
 
   onBackdropClicked = () => {
@@ -26,5 +28,9 @@ export class DialogDirectiveExampleComponent implements OnInit {
 
   openDialog() {
     this.showDialog = true;
+  }
+
+  openDialogWithConfig() {
+    this.showDialogWithConfig = true;
   }
 }
