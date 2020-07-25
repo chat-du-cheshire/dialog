@@ -28,7 +28,7 @@ export class DialogDirective implements OnChanges, OnDestroy {
   @Input('ngneatDialogAfterClosed') onAfterClosed: (result) => void;
   @Input('ngneatDialogBackdropClicked') onBackdropClicked: () => void;
 
-  @Input('ngneatDialogWith') config: DialogConfig;
+  @Input('ngneatDialogWith') config: Partial<DialogConfig>;
 
   @Output() afterClosed = new EventEmitter();
   @Output() backdropClicked = new EventEmitter();
