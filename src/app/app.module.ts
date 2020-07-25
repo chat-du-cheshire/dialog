@@ -5,9 +5,10 @@ import { DialogModule } from '@ngneat/dialog';
 
 import { AppComponent } from './app.component';
 import { TestDialogComponent } from './test-dialog.component';
+import { DialogDirectiveExampleComponent } from './components/dialog-directive-example/dialog-directive-example.component';
 
 @NgModule({
-  declarations: [AppComponent, TestDialogComponent],
+  declarations: [AppComponent, TestDialogComponent, DialogDirectiveExampleComponent],
   imports: [BrowserModule, ReactiveFormsModule, DialogModule.forRoot()],
   providers: [],
   bootstrap: [AppComponent]

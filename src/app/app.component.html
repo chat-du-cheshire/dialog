@@ -199,16 +199,4 @@
     Open
   </button>
 </div>
-<div class="block">
-  <h2>Toggle dialog directive</h2>
-
-  <div *ngneatDialog="toggleDialog" class="dialog">
-    <h2>Test dialog using a structural directive</h2>
-    <p>This dialog has been opened with this custom config</p>
-    <pre style="background-color: gainsboro">{{ cleanConfig | json }}</pre>
-
-    <button dialogClose>Click me to close the dialog 😉</button>
-  </div>
-
-  <button (click)="toggleDialogDirective()">Toggle {{ toggleDialog ? 'on' : 'off' }}</button>
-</div>
+<app-dialog-directive-example [config]="config.value"></app-dialog-directive-example>

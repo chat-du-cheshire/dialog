@@ -62,8 +62,6 @@ export class AppComponent {
 
   component = TestDialogComponent;
 
-  toggleDialog = false;
-
   config = this.fb.group({
     id: [''],
     height: [''],
@@ -188,14 +186,6 @@ export class AppComponent {
         }
       }
     });
-  }
-
-  dialogDirectiveAfterClosed = result => {
-    this.toggleDialog = false;
-  };
-
-  toggleDialogDirective() {
-    this.toggleDialog = !this.toggleDialog;
   }
 
   private clearConfig(config: DialogConfig) {

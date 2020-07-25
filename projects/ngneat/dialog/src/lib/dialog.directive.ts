@@ -12,6 +12,7 @@ import { DialogRef } from './dialog-ref';
 import { DialogService } from './dialog.service';
 import { Subject } from 'rxjs';
 import { take, takeUntil } from 'rxjs/operators';
+import { DialogConfig } from './config';
 
 function isFunction(what) {
   return typeof what === 'function';
@@ -24,8 +25,10 @@ export class DialogDirective implements OnChanges, OnDestroy {
   @Input('ngneatDialog') toggle = false;
 
   // Those inputs used as callback events for structural directive
-  @Input('ngneatDialogOnAfterClosed') onAfterClosed: (result) => void;
-  @Input('ngneatDialogOnBackdropClicked') onBackdropClicked: () => void;
+  @Input('ngneatDialogAfterClosed') onAfterClosed: (result) => void;
+  @Input('ngneatDialogBackdropClicked') onBackdropClicked: () => void;
+
+  @Input('ngneatDialogWith') config: DialogConfig;
 
   @Output() afterClosed = new EventEmitter();
   @Output() backdropClicked = new EventEmitter();
@@ -44,7 +47,7 @@ export class DialogDirective implements OnChanges, OnDestroy {
 
   private handleToggleChanges() {
     if (this.toggle) {
-      this.dialogRef = this.dialogService.open(this.templateRef);
+      this.dialogRef = this.dialogService.open(this.templateRef, this.config);
       this.subscribeDialogRefEvents();
     } else if (this.dialogRef) {
       this.dialogRef.close();

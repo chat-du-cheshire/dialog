@@ -1,0 +1,13 @@
+<h2>Dialog directive examples</h2>
+<div class="block">
+  <h3>Open dialog with structural directive with callbacks</h3>
+
+  <div *ngneatDialog="showDialog; afterClosed: onDialogClosed; backdropClicked: onBackdropClicked" class="dialog">
+    <h2>Test dialog using a structural directive</h2>
+    <p>This dialog has been opened with this custom config</p>
+
+    <button dialogClose>Click me to close the dialog 😉</button>
+  </div>
+
+  <button (click)="openDialog()">Open dialog</button>
+</div>
