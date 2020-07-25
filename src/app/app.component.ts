@@ -190,6 +190,10 @@ export class AppComponent {
     });
   }
 
+  dialogDirectiveAfterClosed = result => {
+    this.toggleDialog = false;
+  };
+
   toggleDialogDirective() {
     this.toggleDialog = !this.toggleDialog;
   }
